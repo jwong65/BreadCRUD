@@ -12,5 +12,8 @@ console.log(PORT)
 app.get('/', (req, res)=>{
     res.send("First page about bread")
 })
-
+// Breads
+const breadsController = require('./controllers/breads_controllers')
+app.use('/breads', breadsController)
+  
 app.listen(PORT)
