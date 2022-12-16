@@ -12,6 +12,7 @@ breads.get('/', (req, res)=>{
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
+    //res.send(`<img src='Bread[req.params.arrayIndex].image'></img>`)
     let breadimg = Bread[req.params.arrayIndex].image
     //res.send(Bread[req.params.arrayIndex])
     res.send(`<img src=${breadimg}></img>`)
