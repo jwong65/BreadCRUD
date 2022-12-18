@@ -18,7 +18,6 @@ app.use(express.static('public'))
 
 //Routes for the pages
 app.get('/', (req, res)=>{
-    //res.render('Index')
     res.send("First page about bread")
 })
 // Breads
