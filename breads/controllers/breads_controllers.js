@@ -13,6 +13,10 @@ breads.get('/', (req, res)=>{
     })
     //res.send(Bread)
 })
+//Will render from new.jsx viewgi
+breads.get('/new', (req, res)=>{
+    res.render('new')
+})
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
