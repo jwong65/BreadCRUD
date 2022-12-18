@@ -8,7 +8,7 @@ const Bread = require('../models/bread.js')
 breads.get('/', (req, res)=>{
     //res.send('This is the index at /breads')
     res.render('Index', {
-        breads: Bread,
+        bread: Bread,
         title: 'Index Page'
     })
     //res.send(Bread)
@@ -27,6 +27,17 @@ breads.get('/:arrayIndex', (req, res) => {
    // res.send(`<img src=${breadimg}></img>`)
    
 })
+
+breads.post('/', (req, res) => {
+    if(req.body.hasGluten === 'on') {
+      req.body.hasGluten = 'true'
+    } else {
+      req.body.hasGluten = 'false'
+    }
+    Bread.push(req.body)
+    res.send(Bread)
+})
+  
   
 module.exports = breads
 

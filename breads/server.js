@@ -18,6 +18,7 @@ app.use(express.static('public'))
 
 //Routes for the pages
 app.get('/', (req, res)=>{
+    //res.render('Index')
     res.send("First page about bread")
 })
 // Breads
@@ -26,7 +27,7 @@ app.use('/breads', breadsController)
 
 //Catch all page 404
 app.get('*', (req, res)=>{
-    res.send('404')
+    res.render('404')
 })
   
 app.listen(PORT)
