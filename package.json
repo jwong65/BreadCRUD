@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "express-react-views": "^0.11.0"
+  }
+}
