@@ -21,7 +21,7 @@ breads.get('/:arrayIndex', (req, res) => {
             bread: Bread[req.params.arrayIndex]
            })
     } else{
-        res.send('404')
+        res.render('404')
     }
     // let breadimg = Bread[req.params.arrayIndex].image
    // res.send(`<img src=${breadimg}></img>`)
