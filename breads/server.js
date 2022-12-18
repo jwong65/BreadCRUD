@@ -14,6 +14,8 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
+app.use(express.static('public'))
+
 //Routes for the pages
 app.get('/', (req, res)=>{
     res.send("First page about bread")
@@ -21,5 +23,10 @@ app.get('/', (req, res)=>{
 // Breads
 const breadsController = require('./controllers/breads_controllers')
 app.use('/breads', breadsController)
+
+//Catch all page 404
+app.get('*', (req, res)=>{
+    res.send('404')
+})
   
 app.listen(PORT)
