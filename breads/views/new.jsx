@@ -29,6 +29,11 @@ function newPage () {
             <br />
             <input type="submit"/>
           </form>
+          {/* This is the button to send back to /breads */}
+          <div className="backButton">
+            <a href="/breads"><button>Go back to the index</button></a>
+            </div>
+
         </Default>
       )
 }
