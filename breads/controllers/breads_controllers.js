@@ -16,11 +16,16 @@ breads.get('/', (req, res)=>{
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    let breadimg = Bread[req.params.arrayIndex].image
+    if (Bread[req.params.arrayIndex]){
+        res.render('Show',{
+            bread: Bread[req.params.arrayIndex]
+           })
+    } else{
+        res.send('404')
+    }
+    // let breadimg = Bread[req.params.arrayIndex].image
    // res.send(`<img src=${breadimg}></img>`)
-   res.render('Show',{
-    bread: Bread[req.params.arrayIndex]
-   })
+   
 })
   
 module.exports = breads
