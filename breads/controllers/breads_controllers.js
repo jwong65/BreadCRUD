@@ -33,6 +33,10 @@ breads.get('/:arrayIndex', (req, res) => {
 })
 
 breads.post('/', (req, res) => {
+    //This is the default image to be added.
+    if (!req.body.image) {
+        req.body.image = 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+      }
     if(req.body.hasGluten === 'on') {
       req.body.hasGluten = 'true'
     } else {
@@ -46,4 +50,3 @@ breads.post('/', (req, res) => {
   
   
 module.exports = breads
-
