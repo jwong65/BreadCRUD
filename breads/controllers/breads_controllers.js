@@ -19,6 +19,18 @@ breads.get('/new', (req, res)=>{
 })
 
 // SHOW
+// show array from breads
+breads.get('/:arrayIndex', (req, res) => {
+    if (Bread[req.params.arrayIndex]) {
+      res.render('Show', {
+        bread:Bread[req.params.arrayIndex],
+        index: req.params.arrayIndex,
+      })
+    } else {
+      res.render('404')
+    }
+  })
+  
 breads.get('/:arrayIndex', (req, res) => {
     if (Bread[req.params.arrayIndex]){
         res.render('Show',{
