@@ -19,7 +19,7 @@ breads.get('/new', (req, res)=>{
 })
 
 // SHOW
-// show array from breads
+// show array from
 breads.get('/:arrayIndex', (req, res) => {
     if (Bread[req.params.arrayIndex]) {
       res.render('Show', {
@@ -31,18 +31,9 @@ breads.get('/:arrayIndex', (req, res) => {
     }
   })
   
-breads.get('/:arrayIndex', (req, res) => {
-    if (Bread[req.params.arrayIndex]){
-        res.render('Show',{
-            bread: Bread[req.params.arrayIndex]
-           })
-    } else{
-        res.render('404')
-    }
     // let breadimg = Bread[req.params.arrayIndex].image
    // res.send(`<img src=${breadimg}></img>`)
    
-})
 
 // DELETE
 breads.delete('/:indexArray', (req, res) => {
