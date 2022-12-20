@@ -19,6 +19,12 @@ function Show ({bread}) {
             have gluten.
         </p>
 
+{/* from from activity */}
+<form action={`/breads/${index}?_method=DELETE`} method="POST">
+  <input type='submit' value="DELETE"/>
+</form>
+
+
 
 
         <img src={bread.image} alt={bread.name} />
