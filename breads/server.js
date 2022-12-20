@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
+
 const methodOverride = require('method-override')
+// using the dependency of method-override
+app.use(methodOverride('_method'))
 
 
 //Requried configuration for the environment variable
@@ -28,8 +31,6 @@ app.get('/', (req, res)=>{
 const breadsController = require('./controllers/breads_controllers')
 app.use('/breads', breadsController)
 
-// using the dependency of method-override
-app.use(methodOverride('_method'))
 
 //Catch all page 404
 app.get('*', (req, res)=>{
