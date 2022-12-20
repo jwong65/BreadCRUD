@@ -13,16 +13,26 @@ breads.get('/', (req, res)=>{
     })
     //res.send(Bread)
 })
+
 //Will render from new.jsx viewgi
 breads.get('/new', (req, res)=>{
     res.render('new')
 })
-
+  
 // DELETE
 breads.delete('/:indexArray', (req, res) => {
     Bread.splice(req.params.indexArray, 1)
     res.status(303).redirect('/breads')
   })
+  
+  // EDIT
+breads.get('/:indexArray/edit', (req, res) => {
+    res.render('edit', {
+      bread: Bread[req.params.indexArray],
+      index: req.params.indexArray
+    })
+})
+
   
 
 // SHOW
@@ -36,11 +46,21 @@ breads.get('/:arrayIndex', (req, res) => {
     } else {
       res.render('404')
     }
-  })
-  
+})
+
+// UPDATE
+breads.put('/:arrayIndex', (req, res) => {
+    console.log("get")
+    if(req.body.hasGluten === 'on'){
+      req.body.hasGluten = true
+    } else {
+      req.body.hasGluten = false
+    }
+    Bread[req.params.arrayIndex] = req.body
+    res.redirect(`/breads/${req.params.arrayIndex}`)
+})
     // let breadimg = Bread[req.params.arrayIndex].image
-   // res.send(`<img src=${breadimg}></img>`)
-   
+   // res.send(`<img src=${breadimg}></img>`) 
 breads.post('/', (req, res) => {
     //This is the default image to be added.
     if (!req.body.image) {
