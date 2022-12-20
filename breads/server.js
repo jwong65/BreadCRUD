@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
 
 //Requried configuration for the environment variable
 require('dotenv').config()
 const PORT = process.env.PORT
 console.log(PORT)
+
 //console.log(process.env.PORT) They are the same.
 
 //Middleware
@@ -25,6 +27,9 @@ app.get('/', (req, res)=>{
 // Breads
 const breadsController = require('./controllers/breads_controllers')
 app.use('/breads', breadsController)
+
+// using the dependency of method-override
+app.use(methodOverride('_method'))
 
 //Catch all page 404
 app.get('*', (req, res)=>{
