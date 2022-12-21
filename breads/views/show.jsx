@@ -24,13 +24,14 @@ function Show ({bread, index}) {
 
 
         <img src={bread.image} alt={bread.name} />
-        {/* from from activity */}
-        <form action={`/breads/${index}?_method=DELETE`} method="POST">
-          <input type='submit' value="DELETE"/>
-        </form>
 
 
         {/* Link back to homepage */}
+        <li>          {/* from from activity */}
+          <form action={`/breads/${index}?_method=DELETE`} method="POST">
+            <input type='submit' value="DELETE"/>
+          </form>
+        </li>
         <li>
             <a href="/breads"><button>Go Home</button></a>
         </li>

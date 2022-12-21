@@ -5,7 +5,7 @@ function edit({bread, index}){
     return(
         <Default>
             <h2> Edit this bread please</h2>
-            <form action={`/breads/${index}?method=PUT`} method='POST'>
+            <form action={`/breads/${index}?_method=PUT`} method='POST'>
                 {/* Name is required */}
                 <label htmlFor='name'>Name</label>
                 <input type="text" name = "name" id='name' required defaultValue={bread.name}/>
@@ -15,7 +15,7 @@ function edit({bread, index}){
 
 {/* This form has a checkbox for just yes/no */}
                 <label htmlFor='hasGluten'>Does it have Gluten?</label>
-                <input type="checkbox" name = "hasGluten" id='hasGluten' defaultValue={bread.hasGluten}/>
+                <input type="checkbox" name = "hasGluten" id='hasGluten' defaultChecked={bread.hasGluten}/>
 {/* Break because button is being overlapped by checkbox. */}
                 <br></br>
 
