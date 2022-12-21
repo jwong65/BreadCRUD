@@ -16,8 +16,8 @@ function edit(){
 {/* This form has a checkbox for just yes/no */}
                 <label htmlFor='hasGluten'>Does it have Gluten?</label>
                 <input type="checkbox" name = "hasGluten" id='hasGluten' defaultChecked/>
-
-
+{/* Break because button is being overlapped by checkbox. */}
+                <br></br>
 
 
                 <input type = "submit"></input>
