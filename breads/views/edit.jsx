@@ -5,7 +5,7 @@ function edit({bread, index}){
     return(
         <Default>
             <h2> Edit this bread please</h2>
-            <form>
+            <form action={`/breads/${index}?method=PUT`} method='POST'>
                 {/* Name is required */}
                 <label htmlFor='name'>Name</label>
                 <input type="text" name = "name" id='name' required defaultValue={bread.name}/>
