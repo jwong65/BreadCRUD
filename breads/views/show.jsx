@@ -32,7 +32,10 @@ function Show ({bread, index}) {
 
         {/* Link back to homepage */}
         <li>
-            <a href="/breads">Go Home</a>
+            <a href="/breads"><button>Go Home</button></a>
+        </li>
+        <li>
+          <a href={`/breads/${index}/edit`}><button>Edit This Bread</button></a>
         </li>
       </Default>
 
