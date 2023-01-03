@@ -7,6 +7,10 @@ app.use(methodOverride('_method'))
 
 const mongoose = require('mongoose')
 //Dependency for mongoose
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
+    () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
+  )
+  
 
 
 //Requried configuration for the environment variable
