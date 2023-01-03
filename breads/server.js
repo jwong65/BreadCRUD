@@ -5,6 +5,9 @@ const methodOverride = require('method-override')
 // using the dependency of method-override
 app.use(methodOverride('_method'))
 
+const mongoose = require('mongoose')
+//Dependency for mongoose
+
 
 //Requried configuration for the environment variable
 require('dotenv').config()
