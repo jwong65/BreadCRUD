@@ -7,16 +7,13 @@ app.use(methodOverride('_method'))
 
 const mongoose = require('mongoose')
 //Dependency for mongoose
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
-    () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
-  )
   
 
 
 //Requried configuration for the environment variable
 require('dotenv').config()
 const PORT = process.env.PORT
-console.log(PORT)
+//console.log(PORT)
 
 //console.log(process.env.PORT) They are the same.
 
@@ -44,4 +41,8 @@ app.get('*', (req, res)=>{
     res.render('404')
 })
   
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
+    () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
+  )
+
 app.listen(PORT)

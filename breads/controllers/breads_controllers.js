@@ -9,7 +9,11 @@ breads.get('/', (req, res)=>{
     //res.send('This is the index at /breads')
     Bread.find()
       .then(foundBreads=>{
-        console.log(foundBreads)
+        res.render('index', {
+          breads: foundBreads,
+          title: 'Index Page'
+        })
+        //console.log(foundBreads)
       })
     
     // res.render('Index', {
