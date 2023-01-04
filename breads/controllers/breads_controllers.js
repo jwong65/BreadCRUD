@@ -53,6 +53,9 @@ breads.get('/:id', (req, res)=>{
         bread: foundBreads
       })
     })
+    .catch(err=>{
+      res.render('404')
+    })
 })
   
   // '/:arrayIndex', (req, res) => {
