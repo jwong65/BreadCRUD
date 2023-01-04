@@ -46,16 +46,26 @@ breads.get('/:indexArray/edit', (req, res) => {
 
 // SHOW
 // show array from
-breads.get('/:arrayIndex', (req, res) => {
-    if (Bread[req.params.arrayIndex]) {
-      res.render('Show', {
-        bread:Bread[req.params.arrayIndex],
-        index: req.params.arrayIndex,
+breads.get('/:id', (req, res)=>{
+  Bread.findById(req.params.id)
+    .then(foundBreads=>{
+      res.render('show',{
+        bread: foundBreads
       })
-    } else {
-      res.render('404')
-    }
+    })
 })
+  
+  // '/:arrayIndex', (req, res) => {
+
+  // if (Bread[req.params.arrayIndex]) {
+    //   res.render('Show', {
+    //     bread:Bread[req.params.arrayIndex],
+    //     index: req.params.arrayIndex,
+    //   })
+    // } else {
+    //   res.render('404')
+    // }
+
 
 // UPDATE
 breads.put('/:arrayIndex', (req, res) => {
