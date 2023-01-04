@@ -7,11 +7,16 @@ const Bread = require('../models/bread.js')
 
 breads.get('/', (req, res)=>{
     //res.send('This is the index at /breads')
-    res.render('Index', {
-        breads: Bread,
-        title: 'Index Page'
-    })
-    //res.send(Bread)
+    Bread.find()
+      .then(foundBreads=>{
+        console.log(foundBreads)
+      })
+    
+    // res.render('Index', {
+    //     breads: Bread,
+    //     title: 'Index Page'
+    // })
+    // //res.send(Bread)
 })
 
 //Will render from new.jsx viewgi

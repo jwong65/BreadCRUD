@@ -10,6 +10,7 @@ const breadSchema =  new Schema({
   image: {type:String, default:'http://placekitten.com/g/200/300'}
 })
 
+//Model
 const Bread = mongoose.model('Bread', breadSchema)
 
 module.exports=Bread
