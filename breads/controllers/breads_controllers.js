@@ -73,14 +73,16 @@ breads.put('/:arrayIndex', (req, res) => {
 breads.post('/', (req, res) => {
     //This is the default image to be added.
     if (!req.body.image) {
-        req.body.image = 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+        req.body.image = undefined
+        // 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
       }
     if(req.body.hasGluten === 'on') {
       req.body.hasGluten = 'true'
     } else {
       req.body.hasGluten = 'false'
     }
-    Bread.push(req.body)
+    //Instead of Bread.push(req.body) we use Bread.create
+    Bread.create(req.body)
     //res.send(Bread)
     //Will now send to /breads
     res.redirect('/breads')
