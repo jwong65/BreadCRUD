@@ -5,7 +5,8 @@ const { Schema } = mongoose
 
 const breadSchema =  new Schema({
   name: { type: String, required:true},
-  hasGluten: {type:Boolean},
+  hasGluten: Boolean,
+  //{type:Boolean} instead because there's no default or required
   image: {type:String, default:'http://placekitten.com/g/200/300'}
 })
 
