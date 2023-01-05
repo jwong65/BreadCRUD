@@ -80,15 +80,20 @@ breads.get('/:id', (req, res)=>{
 
 
 // UPDATE
-breads.put('/:arrayIndex', (req, res) => {
-    console.log("get")
-    if(req.body.hasGluten === 'on'){
-      req.body.hasGluten = true
-    } else {
-      req.body.hasGluten = false
-    }
-    Bread[req.params.arrayIndex] = req.body
-    res.redirect(`/breads/${req.params.arrayIndex}`)
+breads.put('/:id', (req, res) => {
+    Bread.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    //3rd paramter is option to make sure it is updated
+      .then(updateBread=>{
+        //This is not using arrayIndex anymore but the id of the database
+        res.redirect(`/breads/${req.params.id}`)
+      })
+    // if(req.body.hasGluten === 'on'){
+    //   req.body.hasGluten = true
+    // } else {
+    //   req.body.hasGluten = false
+    // }
+    // Bread[req.params.arrayIndex] = req.body
+    // res.redirect(`/breads/${req.params.arrayIndex}`)
 })
     // let breadimg = Bread[req.params.arrayIndex].image
    // res.send(`<img src=${breadimg}></img>`) 
