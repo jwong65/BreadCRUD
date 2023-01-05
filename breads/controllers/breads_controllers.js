@@ -29,7 +29,7 @@ breads.get('/new', (req, res)=>{
 })
   
 // DELETE
-breads.delete('/:indexArray', (req, res) => {
+breads.delete('/:id', (req, res) => {
   Bread.findByIdAndDelete(req.params.id)
     .then(deleteBread=>{
       res.status(303).redirect('/breads')
