@@ -33,7 +33,7 @@ function Show ({bread, index}) {
             <a href="/breads"><button>Go Home</button></a>
         </li>
         <li>
-          <a href={`/breads/${index}/edit`}><button>Edit This Bread</button></a>
+          <a href={`/breads/${bread.id}/edit`}><button>Edit This Bread</button></a>
         </li>
       </Default>
 
