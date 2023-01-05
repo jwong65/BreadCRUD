@@ -30,8 +30,16 @@ breads.get('/new', (req, res)=>{
   
 // DELETE
 breads.delete('/:indexArray', (req, res) => {
-    Bread.splice(req.params.indexArray, 1)
-    res.status(303).redirect('/breads')
+  Bread.findByIdAndDelete(req.params.id)
+    .then(deleteBread=>{
+      res.status(303).redirect('/breads')
+    })
+    .catch(err=>{
+      res.render('404')
+    })
+
+  // Bread.splice(req.params.indexArray, 1)
+    // res.status(303).redirect('/breads')
   })
 
   // EDIT to edit.jsx
