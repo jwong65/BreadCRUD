@@ -44,7 +44,7 @@ breads.delete('/:id', (req, res) => {
   })
 
   // EDIT to edit.jsx
-breads.get('/:indexArray/edit', (req, res) => {
+breads.get('/:id/edit', (req, res) => {
     res.render('edit', {
       bread: Bread[req.params.indexArray],
       index: req.params.indexArray
