@@ -34,9 +34,10 @@ breads.delete('/:indexArray', (req, res) => {
     .then(deleteBread=>{
       res.status(303).redirect('/breads')
     })
-    .catch(err=>{
-      res.render('404')
-    })
+    
+    // .catch(err=>{
+    //   res.render('404')
+    // })
 
   // Bread.splice(req.params.indexArray, 1)
     // res.status(303).redirect('/breads')
