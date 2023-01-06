@@ -16,7 +16,9 @@ function Show ({bread, index}) {
                 : <span> does NOT </span>
             }
             have gluten.
-            This bread is baked by {bread.baker}
+            {/* This bread is baked by {bread.baker} instead using bakedBy() instance*/}
+            <br></br>
+            {bread.bakedBy()}
         </p>
 
 
