@@ -15,13 +15,12 @@ function Show ({bread, index}) {
                 ? <span> does </span>
                 : <span> does NOT </span>
             }
-
             have gluten.
+            This bread is baked by {bread.baker}
         </p>
 
 
         <img src={bread.image} alt={bread.name} />
-
 
         {/* Link back to homepage */}
         <li>          {/* from from activity */}
