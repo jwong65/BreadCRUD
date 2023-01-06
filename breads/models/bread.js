@@ -19,9 +19,11 @@ breadSchema.methods.bakedBy= function(){
   return `${this.name} was baked by ${this.baker}`
 }
 
-breadSchema.statics.findByName = function(name){
-  return this.find({name})
-}
+// Will work on later possibly
+// breadSchema.statics.findByName = function(name){
+//   return this.find({name})
+// }
+
 //Model
 const Bread = mongoose.model('Bread', breadSchema)
 
