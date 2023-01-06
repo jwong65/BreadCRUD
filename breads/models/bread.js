@@ -11,17 +11,16 @@ const breadSchema =  new Schema({
   baker: {
     type: String,
     enum: ['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
-  },
-  statics: {
-    findByName(name){
-      return this.find({name})
-    }
   }
 })
 //Instance
 breadSchema.methods.bakedBy= function(){
   //Instead of bread, use this.name
   return `${this.name} was baked by ${this.baker}`
+}
+
+breadSchema.statics.findByName = function(name){
+  return this.find({name})
 }
 //Model
 const Bread = mongoose.model('Bread', breadSchema)
