@@ -90,6 +90,8 @@ breads.get('/:id/edit', (req, res) => {
 breads.get('/:id', (req, res)=>{
   Bread.findById(req.params.id)
     .then(foundBreads=>{
+      // Have to use the promise foundBreads for bakedBy
+      const wasBaked = foundBreads.bakedBy()
       res.render('show',{
         bread: foundBreads
       })
