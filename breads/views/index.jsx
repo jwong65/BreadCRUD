@@ -10,12 +10,16 @@ function Index ({breads, title}) {
             {
                     breads.map((bread, index)=> {
                       return (
-                      <li key={index}>
-                        <a href={`/breads/${bread.id}`}>
-                          {/* index is changed to bread.id since it's a database not an array index */}
-                            {bread.name}
-                        </a>
-                      </li>)
+                      <ul>
+                        <li key={index}>
+                          <a href={`/breads/${bread.id}`}>
+                            {/* index is changed to bread.id since it's a database not an array index */}
+                              {bread.name}
+                          </a>
+                        </li>
+                        <li>{bread.bakedBy()}</li>
+                      </ul>)
+                  
                     })
 
             }
