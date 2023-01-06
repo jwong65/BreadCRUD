@@ -7,7 +7,11 @@ const breadSchema =  new Schema({
   name: { type: String, required:true},
   hasGluten: Boolean,
   //{type:Boolean} instead because there's no default or required
-  image: {type:String, default:'http://placekitten.com/g/200/300'}
+  image: {type:String, default:'http://placekitten.com/g/200/300'},
+  baker: {
+    type: String,
+    enum: ['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
+  }
 })
 
 //Model
