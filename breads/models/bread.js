@@ -11,6 +11,11 @@ const breadSchema =  new Schema({
   baker: {
     type: String,
     enum: ['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
+  },
+  statics: {
+    findByName(name){
+      return this.find({name})
+    }
   }
 })
 //Instance
