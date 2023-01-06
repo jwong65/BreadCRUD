@@ -126,6 +126,9 @@ breads.post('/', (req, res) => {
     }
     //Instead of Bread.push(req.body) we use Bread.create
     Bread.create(req.body)
+      .catch(err=>{
+        res.render('404')
+      })
     //res.send(Bread)
     //Will now send to /breads
     res.redirect('/breads')
