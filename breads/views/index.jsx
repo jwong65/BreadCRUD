@@ -18,7 +18,6 @@ function Index ({breads, bakers, title}) {
                               {bread.name}
                           </a>
                         </li>
-                        <li>{bread.bakedBy()}</li>
                       </ul>)
                   
                     })
