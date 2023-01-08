@@ -75,14 +75,20 @@ breads.put('/:id', (req, res) => {
 
   // EDIT to edit.jsx
 breads.get('/:id/edit', (req, res) => {
-  Bread.findById(req.params.id)
-    .then(foundBreads=>{
-      res.render('edit', {
-        //Instead of req.params.indexArray use the data that was sent from database
-        bread: foundBreads
-      // index: req.params.indexArray, This isn't needed anymore
-          }) 
+    Baker.find()
+    .then(foundBaker=>{
+      Bread.findById(req.params.id)
+      .then(foundBreads=>{
+        res.render('edit', {
+          //Instead of req.params.indexArray use the data that was sent from database
+          bread: foundBreads,
+        // index: req.params.indexArray, This isn't needed anymore
+          baker: foundBaker
+            }) 
+      })
+  
     })
+    
     
   // res.render('edit', {
   //     bread: Bread[req.params.indexArray],
