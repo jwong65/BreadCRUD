@@ -11,7 +11,7 @@ const bakerSchema = new Schema({
         enum:['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe', 'Chandler']
     },
     startDate:{ 
-        type: String,
+        type: Date,
         required: true
     },
     bio:{ type: String}
