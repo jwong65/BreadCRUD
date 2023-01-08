@@ -7,7 +7,9 @@ app.use(methodOverride('_method'))
 
 const mongoose = require('mongoose')
 //Dependency for mongoose
-  
+
+//strictQuery just to clean up the terminal
+mongoose.set('strictQuery', true) 
 
 
 //Requried configuration for the environment variable
