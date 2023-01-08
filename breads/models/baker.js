@@ -6,7 +6,7 @@ const bakerSchema = new Schema({
     name:{
         type: String,
         required: true, 
-        enum:['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
+        enum:['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe', 'Chandler']
     },
     startDate:{ 
         type: String,
