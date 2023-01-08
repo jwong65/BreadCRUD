@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function edit({bread}){
+function edit({bread, bakers}){
     return(
         <Default>
             <h2> Edit this bread please</h2>
@@ -16,12 +16,18 @@ function edit({bread}){
                 {/* Need to have field to update bakers */}
                 <label htmlFor='baker'>Baker who baked it</label>
                 <select name='baker' id='baker' defaultValue={bread.baker}>
-                    <option value='Rachel'>Rachel</option>
+                    {bakers.map((baker)=>{
+                        return(
+                            <option value={baker.id} key={baker.id}>{baker.id}</option>
+                        )
+                    })}
+                    {/* <option value='Rachel'>Rachel</option>
                     <option value='Monica'>Monica</option>
                     <option value='Joey'>Joey</option>
                     <option value='Chandler'>Chandler</option>
                     <option value='Ross'>Ross</option>
-                    <option value='Phoebe'>Phoebe</option>
+                    <option value='Phoebe'>Phoebe</option> */}
+                    
                 </select>
 {/* This form has a checkbox for just yes/no */}
                 <label htmlFor='hasGluten'>Does it have Gluten?</label>
