@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 //connect to bread.js
 const Bread = require('./bread')
-const baker = require('../controllers/baker_controller')
 const { Schema } = mongoose
 
 
