@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Baker = require('./baker')
 const { Schema } = mongoose
 //Shorthand for the constructor.
 
@@ -10,7 +11,7 @@ const breadSchema =  new Schema({
   image: {type:String, default:'http://placekitten.com/g/200/300'},
   baker: {
     type: String,
-    enum: ['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
+    ref: Baker
   }
 })
 //Instance
