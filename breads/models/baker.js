@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const baker = require('../controllers/baker_controller')
 const { Schema } = mongoose
 
 
@@ -14,6 +15,15 @@ const bakerSchema = new Schema({
     },
     bio:{ type: String}
 
+})
+
+//Virtual
+bakerSchema.virtual('bread',{
+    //Related model's schema is Bread from bread.js
+    ref: 'Bread',
+    localField: '_id',
+    //foreginField is the reference on the bread
+    foreignField: 'baker'
 })
 
 const Baker = mongoose.model('Baker', bakerSchema)

@@ -60,7 +60,7 @@ breads.put('/:id', (req, res) => {
   Bread.findByIdAndUpdate(req.params.id, req.body, {new:true})
   //3rd paramter is option to make sure it is updated
     .then(updateBread=>{
-      console.log(updateBread)
+      //console.log(updateBread)
       //This is not using arrayIndex anymore but the id of the database
       res.redirect(`/breads/${req.params.id}`)
     })
