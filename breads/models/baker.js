@@ -19,7 +19,7 @@ const bakerSchema = new Schema({
 { toJSON:{virtuals: true}})
 
 //Virtual
-bakerSchema.virtual('bread',{
+bakerSchema.virtual('breads',{
     //Related model's schema is Bread from bread.js
     ref: 'Bread',
     localField: '_id',

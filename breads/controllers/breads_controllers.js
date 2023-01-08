@@ -8,15 +8,20 @@ const Bread = require('../models/bread.js')
 
 breads.get('/', (req, res)=>{
     //res.send('This is the index at /breads')
-    Bread.find()
-      .then(foundBreads=>{
-        res.render('index', {
-          breads: foundBreads,
-          title: 'Index Page'
+    Baker.find()
+      .then(foundBaker=>{
+        Bread.find()
+        .then(foundBreads=>{
+          res.render('index', {
+            breads: foundBreads,
+            bakers: foundBaker,
+            title: 'Index Page'
+          })
+          //console.log(foundBreads)
         })
-        //console.log(foundBreads)
       })
-    
+      
+      
     // res.render('Index', {
     //     breads: Bread,
     //     title: 'Index Page'
