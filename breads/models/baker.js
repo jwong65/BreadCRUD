@@ -3,6 +3,16 @@ const { Schema } = mongoose
 
 
 const bakerSchema = new Schema({
+    name:{
+        type: String,
+        required: true, 
+        enum:['Rachel', 'Monica', 'Joey', 'Ross', 'Phoebe']
+    },
+    startDate:{ 
+        type: String,
+        required: true
+    },
+    bio:{ type: String}
 
 })
 
