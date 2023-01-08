@@ -10,8 +10,8 @@ const breadSchema =  new Schema({
   //{type:Boolean} instead because there's no default or required
   image: {type:String, default:'http://placekitten.com/g/200/300'},
   baker: {
-    type: String,
-    ref: Baker
+    type: Schema.Types.ObjectId,
+    ref: 'Baker'
   }
 })
 //Instance
