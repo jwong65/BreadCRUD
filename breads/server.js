@@ -35,6 +35,9 @@ app.get('/', (req, res)=>{
 const breadsController = require('./controllers/breads_controllers')
 app.use('/breads', breadsController)
 
+const bakerController = require('./controllers/baker_controller')
+app.use('/bakers', bakerController)
+
 
 //Catch all page 404
 app.get('*', (req, res)=>{
