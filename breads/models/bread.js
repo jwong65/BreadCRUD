@@ -17,7 +17,7 @@ const breadSchema =  new Schema({
 //Instance
 breadSchema.methods.bakedBy= function(){
   //Instead of bread, use this.name
-  return `${this.name} was baked by ${this.baker}`
+  return `${this.name} was baked by ${this.baker.name}`
 }
 
 // Will work on later possibly
