@@ -1,4 +1,5 @@
 const express = require('express')
+const Baker = require('../models/baker.js')
 const breads = express.Router()
 
 //Connect to the model directory
@@ -25,7 +26,13 @@ breads.get('/', (req, res)=>{
 
 //Will render from new.jsx viewgi
 breads.get('/new', (req, res)=>{
-    res.render('new')
+    Baker.find()
+    .then(bakerFound=>{
+      res.render('new',{
+        bakers: bakerFound
+      })
+    })
+    //res.render('new')
 })
   
 // DELETE
