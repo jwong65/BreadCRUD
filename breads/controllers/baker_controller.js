@@ -27,5 +27,9 @@ baker.get('/:id', (req, res)=>{
     })
 })
 
+baker.delete('/:id', (req, res)=>{
+    
+})
+
 
 module.exports = baker
