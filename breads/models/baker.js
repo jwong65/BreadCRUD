@@ -31,7 +31,13 @@ bakerSchema.virtual('breads',{
 //POST DELETE
 bakerSchema.post('findOneAndDelete', function(){
     //Console.log to test that this is being passed
-    console.log(this)
+    //console.log(this)
+    Bread.deleteMany({baker: this._conditions._id})
+        .then(deleteStatus=>{
+            console.log(deleteStatus)
+            //Example log of a status: { acknowledged: true, deletedCount: 1 }
+
+        })
 })
 
 const Baker = mongoose.model('Baker', bakerSchema)
