@@ -6,20 +6,24 @@ const breads = express.Router()
 const Bread = require('../models/bread.js')
 
 
-breads.get('/', (req, res)=>{
+breads.get('/', async (req, res)=>{
     //res.send('This is the index at /breads')
-    Baker.find()
-      .then(foundBaker=>{
-        Bread.find()
-        .then(foundBreads=>{
+
+    //When this is async Baker.find() and Bread.find have to be changed
+    // Baker.find()
+    //  .then(foundBaker=>{
+        // Bread.find()
+        // .then(foundBreads=>{
+
+    const foundBread = await Bread.find()
+    const foundBaker = await Baker.find()
           res.render('index', {
             breads: foundBreads,
             bakers: foundBaker,
             title: 'Index Page'
           })
           //console.log(foundBreads)
-        })
-      })
+        }
       
       
     // res.render('Index', {
@@ -27,7 +31,7 @@ breads.get('/', (req, res)=>{
     //     title: 'Index Page'
     // })
     // //res.send(Bread)
-})
+)
 
 //Will render from new.jsx viewgi
 breads.get('/new', (req, res)=>{
