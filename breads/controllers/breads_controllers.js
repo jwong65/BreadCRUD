@@ -15,7 +15,7 @@ breads.get('/', async (req, res)=>{
         // Bread.find()
         // .then(foundBreads=>{
 
-    const foundBread = await Bread.find().limit(2)
+    const foundBread = await Bread.find().limit(5)
     const foundBaker = await Baker.find()
           res.render('index', {
             breads: foundBread,
