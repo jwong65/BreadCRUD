@@ -16,7 +16,7 @@ breads.get('/', async (req, res)=>{
         // .then(foundBreads=>{
 
     const foundBread = await Bread.find().limit(5)
-    const foundBaker = await Baker.find()
+    const foundBaker = await Baker.find().lean()
           res.render('index', {
             breads: foundBread,
             bakers: foundBaker,
@@ -24,8 +24,7 @@ breads.get('/', async (req, res)=>{
           })
           //console.log(foundBreads)
         }
-      
-      
+
     // res.render('Index', {
     //     breads: Bread,
     //     title: 'Index Page'

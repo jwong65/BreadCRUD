@@ -21,6 +21,7 @@ baker.get('/:id', (req, res)=>{
     Baker.findById(req.params.id)
     .populate({
         path: 'breads',
+        //This limits the number of bread shown in the baker show field
         options: {limit: 3}
     })
     .then(foundBaker=>{
