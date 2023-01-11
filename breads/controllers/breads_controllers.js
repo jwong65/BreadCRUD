@@ -18,7 +18,7 @@ breads.get('/', async (req, res)=>{
     const foundBread = await Bread.find()
     const foundBaker = await Baker.find()
           res.render('index', {
-            breads: foundBreads,
+            breads: foundBread,
             bakers: foundBaker,
             title: 'Index Page'
           })
